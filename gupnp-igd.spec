@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 Name:           gupnp-igd
 Version:        0.1.3
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Handle Internet Gateway Device port mappings
 Group:          System/Libraries
 License:        LGPLv2+
