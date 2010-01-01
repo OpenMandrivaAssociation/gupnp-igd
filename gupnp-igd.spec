@@ -1,10 +1,10 @@
 %define api 1.0
-%define major 2
+%define major 3
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-igd
-Version:        0.1.3
-Release:        %mkrel 3
+Version:        0.1.5
+Release:        %mkrel 1
 Summary:        Handle Internet Gateway Device port mappings
 Group:          System/Libraries
 License:        LGPLv2+
