@@ -49,6 +49,7 @@ Files for development with gupnp-igd.
 Summary: Python bindings for %{name}
 Group: Development/Python
 Requires: %libname = %{version}-%{release}
+%py_requires
 
 %description -n python-%{name}
 Python bindings for %{name}.
@@ -88,6 +89,3 @@ rm -rf %{buildroot}
 %files -n python-%{name}
 %defattr(-,root,root,-)
 %{python_sitearch}/gupnp
-%{python_sitearch}/gupnp/igd.so
-%{python_sitearch}/gupnp/igd.la
-
