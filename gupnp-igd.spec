@@ -3,7 +3,7 @@
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-igd
-Version:        0.1.5
+Version:        0.1.6
 Release:        %mkrel 1
 Summary:        Handle Internet Gateway Device port mappings
 Group:          System/Libraries
@@ -13,6 +13,8 @@ Source0:        http://www.gupnp.org/sources/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel
+BuildRequires: python-devel
+BuildRequires: python-gobject-devel
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -42,6 +44,14 @@ Provides: lib%name-devel = %version-%release
 
 %description -n %develname
 Files for development with gupnp-igd.
+
+%package -n python-%{name}
+Summary: Python bindings for %{name}
+Group: Development/Python
+Requires: %libname = %{version}-%{release}
+
+%description -n python-%{name}
+Python bindings for %{name}.
 
 %prep
 %setup -q
@@ -74,4 +84,10 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/gupnp-igd-%api.pc
 %{_libdir}/libgupnp-igd-%api.so
 %{_libdir}/libgupnp-igd-%api.la
+
+%files -n python-%{name}
+%defattr(-,root,root,-)
+%{python_sitearch}/gupnp
+%{python_sitearch}/gupnp/igd.so
+%{python_sitearch}/gupnp/igd.la
 
