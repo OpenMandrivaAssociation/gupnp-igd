@@ -4,12 +4,13 @@
 %define develname %mklibname -d %name
 Name:           gupnp-igd
 Version:        0.1.7
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Handle Internet Gateway Device port mappings
 Group:          System/Libraries
 License:        LGPLv2+
 URL:            http://www.gupnp.org/
 Source0:        http://www.gupnp.org/sources/%{name}/%{name}-%{version}.tar.gz
+Patch0:		gupnp-igd-0.1.7-fix-build.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel
@@ -56,6 +57,7 @@ Python bindings for %{name}.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x --disable-static
