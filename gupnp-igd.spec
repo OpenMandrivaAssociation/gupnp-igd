@@ -3,19 +3,20 @@
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-igd
-Version:        0.2.0
-Release:        %mkrel 1
+Version:        0.2.1
+Release:        1
 Summary:        Handle Internet Gateway Device port mappings
 Group:          System/Libraries
 License:        LGPLv2+
 URL:            http://www.gupnp.org/
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
+Source0:	http://gupnp.org/sites/all/files/sources/%{name}-%{version}.tar.gz
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel >= 0.18
 BuildRequires: python-devel
 BuildRequires: python-gobject-devel
 BuildRequires: gobject-introspection-devel
+Patch0:	       disable_static.patch
+Patch1:	       gmodule_linker_fix.patch
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -57,38 +58,27 @@ Python bindings for %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %configure2_5x --disable-static
 make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdvver < 200900
-%post -n %libname -p /sbin/ldconfig
-%postun -n %libname -p /sbin/ldconfig
-%endif
-
 %files -n %libname
-%defattr(-,root,root,-)
 %doc AUTHORS COPYING README
 %{_libdir}/libgupnp-igd-%api.so.%{major}*
 %_libdir/girepository-1.0/GUPnPIgd-1.0.typelib
 
 %files -n %develname
-%defattr(-,root,root,-)
 %{_datadir}/gtk-doc/html/gupnp-igd/
 %{_includedir}/gupnp-igd-%api
 %{_libdir}/pkgconfig/gupnp-igd-%api.pc
 %{_libdir}/libgupnp-igd-%api.so
-%{_libdir}/libgupnp-igd-%api.la
 %_datadir/gir-1.0/GUPnPIgd-1.0.gir
 
 %files -n python-%{name}
-%defattr(-,root,root,-)
 %{python_sitearch}/gupnp
