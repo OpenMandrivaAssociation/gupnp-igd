@@ -1,0 +1,62 @@
+diff --git a/configure b/configure
+index 91d9e30..99872aa 100755
+--- a/configure
++++ b/configure
+@@ -11616,11 +11616,11 @@ if test -n "$LIBGUPNP_CFLAGS"; then
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0") 2>&5
++  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBGUPNP_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0" 2>/dev/null`
++  pkg_cv_LIBGUPNP_CFLAGS=`$PKG_CONFIG --cflags "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -11631,12 +11631,12 @@ if test -n "$LIBGUPNP_LIBS"; then
+     pkg_cv_LIBGUPNP_LIBS="$LIBGUPNP_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBGUPNP_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0" 2>/dev/null`
++  pkg_cv_LIBGUPNP_LIBS=`$PKG_CONFIG --libs "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -11658,12 +11658,12 @@ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0" 2>&1`
+         else
+-	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0" 2>&1`
++	        LIBGUPNP_PKG_ERRORS=`$PKG_CONFIG --print-errors "glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBGUPNP_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0) were not met:
++	as_fn_error $? "Package requirements (glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0) were not met:
+ 
+ $LIBGUPNP_PKG_ERRORS
+ 
+diff --git a/configure.ac b/configure.ac
+index 83277a5..a8ea3ba 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -10,7 +10,7 @@ AC_STDC_HEADERS
+ AC_PROG_LIBTOOL
+ AC_FUNC_MMAP
+ 
+-PKG_CHECK_MODULES(LIBGUPNP, glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0)
++PKG_CHECK_MODULES(LIBGUPNP, glib-2.0 >= 2.14 gupnp-1.0 >= 0.18 gthread-2.0 gmodule-2.0)
+ 
+ # glib-genmarshal
+ GLIB_GENMARSHAL=`pkg-config --variable=glib_genmarshal glib-2.0`
