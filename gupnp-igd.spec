@@ -13,6 +13,7 @@ URL:		http://www.gupnp.org/
 Source0:	http://gupnp.org/sites/all/files/sources/%{name}-%{version}.tar.gz
 Patch0:		disable_static.patch
 Patch1:		gmodule_linker_fix.patch
+Patch2:		gupnp-igd-automake-1.13.patch
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(gupnp-1.0) >= 0.18
 BuildRequires:	python-devel
@@ -58,8 +59,10 @@ Python bindings for %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%apply_patches
+
+aclocal
+automake -a
 
 %build
 %configure2_5x --disable-static
