@@ -14,9 +14,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/%{url_ver}/%{name}-%{version}.tar.xz
-#Patch0:		disable_static.patch
-#Patch1:		gmodule_linker_fix.patch
-#Patch2:		gupnp-igd-automake-1.13.patch
+Patch0:		gupnp-igd-0.2.2-underlinking.patch
 
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
