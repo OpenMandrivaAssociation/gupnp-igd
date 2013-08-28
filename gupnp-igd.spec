@@ -75,6 +75,7 @@ Python bindings for %{name}.
 #automake -a
 
 %build
+autoreconf -fiv
 %configure2_5x --disable-static
 %make LIBS='-lpython2.7'
 
