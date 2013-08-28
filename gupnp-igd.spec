@@ -64,7 +64,7 @@ Files for development with gupnp-igd.
 Summary:	Python bindings for %{name}
 Group:		Development/Python
 Requires:	%{libname} = %{version}-%{release}
-%py_requires
+BuildRequires:	python-devel
 
 %description -n python-%{name}
 Python bindings for %{name}.
