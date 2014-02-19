@@ -18,11 +18,10 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/%{url_ver}/%{name}-%{v
 #Patch1:		gmodule_linker_fix.patch
 #Patch2:		gupnp-igd-automake-1.13.patch
 
-BuildRequires:	gtk-doc
-BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(gupnp-1.0) >= 0.18
-BuildRequires:	pkgconfig(python)
-BuildRequires:	pkgconfig(pygobject-2.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  pkgconfig(gupnp-1.0) >= 0.18
+BuildRequires:  pkgconfig(python)
+BuildRequires:  pkgconfig(pygobject-2.0)
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
