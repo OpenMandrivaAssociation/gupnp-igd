@@ -9,7 +9,7 @@
 Summary:	Handle Internet Gateway Device port mappings
 Name:		gupnp-igd
 Version:	0.2.2
-Release:	6
+Release:	7
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
