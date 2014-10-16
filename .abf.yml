@@ -1,2 +1,4 @@
+removed_sources:
+  gupnp-igd-0.2.1.tar.gz: 409cb45e495dfa61c4ce4a74f8ba06f2784c39e2
 sources:
-  "gupnp-igd-0.2.1.tar.gz": 409cb45e495dfa61c4ce4a74f8ba06f2784c39e2
+  gupnp-igd-0.2.4.tar.xz: 3a4b2c283d5757cd04594cd827b820fce8c10cfc
