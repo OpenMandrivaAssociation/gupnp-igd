@@ -8,15 +8,14 @@
 
 Summary:	Handle Internet Gateway Device port mappings
 Name:		gupnp-igd
-Version:	0.2.5
-Release:	3
+Version:	1.2.0
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/%{url_ver}/%{name}-%{version}.tar.xz
 
-Patch0:		gupnp-igd-0.2.5-gupnp-1.2.patch
-
+BuildRequires:	meson
 BuildRequires:	gtk-doc
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gupnp-1.2) >= 0.18
@@ -70,13 +69,15 @@ Python bindings for %{name}.
 
 %prep
 %autosetup -p1
+%meson \
+	-Dintrospection=true \
+	-Dgtk-doc=true
 
 %build
-%configure
-%make 
+%ninja_build -C build
 
 %install
-%makeinstall_std
+%ninja_install -C build
 
 %files -n %{libname}
 %{_libdir}/libgupnp-igd-%{api}.so.%{major}*
@@ -86,9 +87,7 @@ Python bindings for %{name}.
 
 %files -n %{devname}
 %doc AUTHORS COPYING README
-%{_datadir}/gtk-doc/html/gupnp-igd/
 %{_includedir}/gupnp-igd-%{api}
 %{_libdir}/pkgconfig/gupnp-igd-%{api}.pc
 %{_libdir}/libgupnp-igd-%{api}.so
 %{_datadir}/gir-1.0/GUPnPIgd-%{api}.gir
-
