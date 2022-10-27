@@ -70,8 +70,7 @@ Python bindings for %{name}.
 %prep
 %autosetup -p1
 %meson \
-	-Dintrospection=true \
-	-Dgtk-doc=true
+	-Dintrospection=true
 
 %build
 %ninja_build -C build
