@@ -8,13 +8,12 @@
 
 Summary:	Handle Internet Gateway Device port mappings
 Name:		gupnp-igd
-Version:	1.2.0
-Release:	5
+Version:	1.6.0
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/%{url_ver}/%{name}-%{version}.tar.xz
-Patch0:		0001-Port-to-GUPnP-1.6-API.patch
 
 BuildRequires:	meson
 BuildRequires:	gtk-doc
