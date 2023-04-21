@@ -86,7 +86,7 @@ Python bindings for %{name}.
 
 %files -n %{devname}
 %doc AUTHORS COPYING README
-%{_includedir}/gupnp-igd-%{api}
-%{_libdir}/pkgconfig/gupnp-igd-%{api}.pc
-%{_libdir}/libgupnp-igd-%{api}.so
-%{_datadir}/gir-1.0/GUPnPIgd-%{api}.gir
+#{_includedir}/gupnp-igd-%{api}
+#{_libdir}/pkgconfig/gupnp-igd-%{api}.pc
+#{_libdir}/libgupnp-igd-%{api}.so
+#{_datadir}/gir-1.0/GUPnPIgd-%{api}.gir
