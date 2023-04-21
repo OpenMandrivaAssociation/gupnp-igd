@@ -82,7 +82,7 @@ Python bindings for %{name}.
 #{_libdir}/libgupnp-igd-%{api}.so.%{major}*
 
 %files -n %{girname}
-%{_libdir}/girepository-1.0/GUPnPIgd-%{api}.typelib
+#{_libdir}/girepository-1.0/GUPnPIgd-%{api}.typelib
 
 %files -n %{devname}
 %doc AUTHORS COPYING README
