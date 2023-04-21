@@ -1,7 +1,7 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
-%define api	1.0
-%define major	4
+%define api	1.6
+%define major	0
 %define libname %mklibname %{name} %{api} %{major}
 %define girname %mklibname %{name}-gir %{api}
 %define devname %mklibname -d %{name}
@@ -79,14 +79,14 @@ Python bindings for %{name}.
 %ninja_install -C build
 
 %files -n %{libname}
-#{_libdir}/libgupnp-igd-%{api}.so.%{major}*
+%{_libdir}/libgupnp-igd-%{api}.so.%{major}*
 
 %files -n %{girname}
-#{_libdir}/girepository-1.0/GUPnPIgd-%{api}.typelib
+%{_libdir}/girepository-1.0/GUPnPIgd-%{api}.typelib
 
 %files -n %{devname}
 %doc AUTHORS COPYING README
-#{_includedir}/gupnp-igd-%{api}
-#{_libdir}/pkgconfig/gupnp-igd-%{api}.pc
-#{_libdir}/libgupnp-igd-%{api}.so
-#{_datadir}/gir-1.0/GUPnPIgd-%{api}.gir
+%{_includedir}/gupnp-igd-%{api}
+%{_libdir}/pkgconfig/gupnp-igd-%{api}.pc
+%{_libdir}/libgupnp-igd-%{api}.so
+%{_datadir}/gir-1.0/GUPnPIgd-%{api}.gir
