@@ -12,7 +12,7 @@ Version:	1.6.0
 Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
-Url:		http://www.gupnp.org/
+Url:		https://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-igd/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	meson
